@@ -33,7 +33,4 @@ open class Position(
         return vacationDays
     }
 
-
-
-
 }

@@ -12,6 +12,7 @@ class Chefbuchhalter(
     // Task von Chef Manager bekommen
     val tasks: MutableList<String> = mutableListOf()
     fun assignTasksWithDeadline(tasksWithDeadline: Map<String, String>) {
+        tasks.clear()
         tasks.addAll(tasksWithDeadline.keys)
         println("Team $abteilung tasks with deadlines:")
         for ((task, deadline) in tasksWithDeadline) {
@@ -19,9 +20,9 @@ class Chefbuchhalter(
         }
     }
 
-    //
-    fun assignTasksToBuchhalter(buchhalter: Buchhalter, task: String, deadline: String) {
-        buchhalter.assignTask(task, deadline)
-        println("Team Buchhaltung: Die Aufgabe '$task' wird Buchhalter ${buchhalter.name} mit Frist $deadline zugewiesen.")
+        //Arbeitsteilung im Team
+        fun assignTasksToBuchhalter(buchhalter: Buchhalter, task: String, deadline: String) {
+            buchhalter.assignTask(task, deadline)
+            println("Team Buchhaltung: Die Aufgabe '$task' wird Buchhalter ${buchhalter.name} mit Frist $deadline zugewiesen.")
+        }
     }
-}

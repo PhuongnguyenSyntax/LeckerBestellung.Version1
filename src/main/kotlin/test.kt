@@ -5,6 +5,8 @@ fun main() {
     val chefBuch = Chefbuchhalter("Maria Ann", "15.08.1988", "Bahnhofstrasse 456", "98765432009", "john@example.com", "Buchhaltung", 4000.0, 5.0)
     manager.assignTasksToChefbuchhalter(chefBuch)
     manager.assignTasksToChefProgrammierer(chefPro)
+
+
     println("----------")
    // test Arbeitsverteilung im team
     val programmierer1 = Programmierer("Henry Old","21.12.1989","Lindenstrasse.7 098765 Berlin","14890987","HenryProgrammer@syntax.com","Programmierer", 3000.0, 4.0)
@@ -27,7 +29,7 @@ fun main() {
     var taskPlus3 = "Optimierung"
     var deadlineTaskPlus3 = "3.11.23"
     var taskPlus4 = "Veröffentlichung"
-    var deadlineTaskPlus4 = "10.11.23"
+    var deadlineTaskPlus4 = "7.11.23"
 
 
 
@@ -77,6 +79,20 @@ fun main() {
     programmierer3.sortTasksByDeadline()
     // Zeigen die To-Do-Liste nach Frist sortiert
     programmierer3.displayAssignedTasks()
+    println("----------")
 
+
+   // neu Position und Account erstellen
+    val system = System()
+    val manager2 = Management("Max Muster", "01.01.1980", "Musterstraße 123", "123456789", "max@goldenSyntax.com", "Management", 5000.0, 5.0)
+    val managerAccount2 = Account("manager2", "1234")
+
+    // neu Mitarbeiter hinzufügen
+    system.addEmployee(manager, managerAccount2)
+    println("----------")
+
+    // für Jede büberstunde bekommen Mitarbeiter 20€
+    val bonusProgrammierer = manager.calculateMonatlicheBonus(programmierer1)
+    val bonusBuchhalter = manager.calculateMonatlicheBonus(buchhalter1)
 
 }

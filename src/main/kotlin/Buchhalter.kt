@@ -15,7 +15,7 @@ class Buchhalter(
         tasksWithDeadlines[task] = deadline
     }
 
-    // zugewiesene Aufgabenliste
+    // zugewiesene Aufgabenliste von Chef
     fun displayAssignedTasks() {
         println("zugewiesene Aufgabenliste:")
         for ((task, deadline) in tasksWithDeadlines) {
@@ -23,7 +23,7 @@ class Buchhalter(
         }
     }
 
-    //Sortimen
+    //Sortieren die Aufgaben nach dem Fälligkeitsdatum.
     fun sortTasksByDeadline() {
         val sortedTasks = tasksWithDeadlines.toList().sortedBy { (_, deadline) -> deadline }
         tasksWithDeadlines.clear()
